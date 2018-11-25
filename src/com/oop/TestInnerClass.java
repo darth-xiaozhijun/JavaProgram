@@ -38,4 +38,5 @@ class Outer{
 			System.out.println("内部类的局部变量：" + age);
 		}
 	}
+	
 }
