@@ -1,4 +1,4 @@
-package execise.generic;
+package com.generic;
 
 public class GenericStack<E> {
 

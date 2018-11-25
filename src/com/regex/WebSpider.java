@@ -1,4 +1,4 @@
-package execise.regex;
+package com.regex;
 
 import java.io.BufferedReader;
 import java.io.IOException;

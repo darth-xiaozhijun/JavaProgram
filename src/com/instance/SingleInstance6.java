@@ -1,4 +1,4 @@
-package execise.instance;
+package com.instance;
 
 /**
  * static静态代码块实现

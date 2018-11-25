@@ -1,4 +1,4 @@
-package execise.recursion;
+package com.recursion;
 
 public class Recursion {
 

@@ -1,4 +1,4 @@
-package execise.arrays;
+package com.arrays;
 
 import java.io.Serializable;
 

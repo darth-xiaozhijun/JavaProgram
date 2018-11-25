@@ -1,4 +1,4 @@
-package execise.instance;
+package com.instance;
 
 public class SingleInstanceTest {
 

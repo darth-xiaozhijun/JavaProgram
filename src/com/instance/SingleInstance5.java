@@ -1,4 +1,4 @@
-package execise.instance;
+package com.instance;
 
 /**
  * 静态内部类虽然保证了单例在多线程并发下的线程安全性，

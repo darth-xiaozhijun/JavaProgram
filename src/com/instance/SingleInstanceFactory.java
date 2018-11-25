@@ -1,4 +1,4 @@
-package execise.instance;
+package com.instance;
 
 /**
  * 内部枚举类实现

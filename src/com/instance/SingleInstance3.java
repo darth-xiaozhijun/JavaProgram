@@ -1,4 +1,4 @@
-package execise.instance;
+package com.instance;
 
 /**
  * 在方法上加synchronized同步锁或是用同步代码块对类加同步锁，

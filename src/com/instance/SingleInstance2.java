@@ -1,4 +1,4 @@
-package execise.instance;
+package com.instance;
 
 /**
  * 单例模式-懒汉式

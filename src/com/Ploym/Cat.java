@@ -1,4 +1,4 @@
-package execise.Ploym;
+package com.Ploym;
 
 public class Cat extends Animal {
 
