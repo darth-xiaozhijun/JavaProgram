@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @author Administrator
  *
  */
-public class TestBubbleSort {
+public class BubbleSort {
 
 	public static void main(String[] args) {
 		
