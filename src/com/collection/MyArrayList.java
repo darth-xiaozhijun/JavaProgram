@@ -18,11 +18,43 @@ public class MyArrayList<E> {
 	}
 	
 	public MyArrayList(int capacity){
-		elementData = new Object[capacity];
+		
+		if(capacity <= 0){
+			throw new RuntimeException("容器的容量错误:"+capacity);
+		}else {
+			elementData = new Object[capacity];
+		}
+		
 	}
 	
 	public void add(E object){
+		
+		//数组扩容
+		if(size == elementData.length){
+			
+			Object[] newArray = new Object[elementData.length + (elementData.length>>1)];
+			System.arraycopy(elementData, 0, newArray, 0, elementData.length);
+			elementData = newArray;
+		}
 		elementData[size++] = object;
+	}
+	
+	public void checkRange(int index){
+		
+		if(index<0 || index>size-1){
+			throw new RuntimeException("索引越界："+index);
+		}
+	}
+	
+	public E get(int index){
+		
+		checkRange(index);
+		return (E) elementData[index];
+	}
+	
+	public void set(E e,int index){
+		checkRange(index);
+		elementData[index] = e;
 	}
 	
 	@Override
@@ -44,6 +76,11 @@ public class MyArrayList<E> {
 		arrayList.add("AA");
 		arrayList.add("BB");
 		
+		for(int i=0; i<40; i++){
+			arrayList.add("gao"+i);
+		}
+		
 		System.out.println(arrayList);
+		System.out.println(arrayList.size);
 	}
 }
