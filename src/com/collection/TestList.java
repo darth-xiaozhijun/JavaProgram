@@ -11,8 +11,39 @@ public class TestList {
 
 	public static void main(String[] args) {
 		
-		test2();
+//		test2();
+		test3();
 		
+	}
+	
+	public static void test3(){
+		
+		List<String> list = new ArrayList<>();
+		list.add("A");
+		list.add("B");
+		list.add("C");
+		list.add("D");
+		
+		System.out.println(list);
+		
+		list.add(2, "Hello");
+		System.out.println(list);
+		
+		list.remove(2);
+		System.out.println(list);
+		
+		list.set(2, "高老庄");
+		System.out.println(list);
+		
+		System.out.println(list.get(2));
+		
+		list.add("C");
+		list.add("B");
+		list.add("A");
+		System.out.println(list);
+		
+		System.out.println(list.indexOf("B"));
+		System.out.println(list.lastIndexOf("B"));
 	}
 	
 	public static void test2(){
