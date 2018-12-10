@@ -57,6 +57,32 @@ public class MyArrayList<E> {
 		elementData[index] = e;
 	}
 	
+	public void remove(int index){
+		checkRange(index);
+		int numberMoved = size - index -1;
+		if(index > 0){
+			System.arraycopy(elementData, index+1, elementData, index, numberMoved);
+		}
+		elementData[--size] = null;
+	}
+	
+	public void remove(E e){
+		
+		for (int i=0; i<size; i++) {
+			if(e.equals(elementData[i])){
+				remove(i);
+			}
+		}
+	}
+	
+	public int size(){
+		return size;
+	}
+	
+	public boolean isEmpty(){
+		return size==0?true:false;
+	}
+	
 	@Override
 	public String toString() {
 		
@@ -73,8 +99,8 @@ public class MyArrayList<E> {
 	public static void main(String[] args) {
 		
 		MyArrayList<String> arrayList = new MyArrayList<>(20);
-		arrayList.add("AA");
-		arrayList.add("BB");
+//		arrayList.add("AA");
+//		arrayList.add("BB");
 		
 		for(int i=0; i<40; i++){
 			arrayList.add("gao"+i);
@@ -82,5 +108,16 @@ public class MyArrayList<E> {
 		
 		System.out.println(arrayList);
 		System.out.println(arrayList.size);
+		
+		arrayList.remove(3);
+		System.out.println(arrayList);
+		System.out.println(arrayList.size);
+		
+		arrayList.remove("gao10");
+		System.out.println(arrayList);
+		System.out.println(arrayList.size);
+		
+		System.out.println(arrayList.isEmpty());
+		System.out.println(arrayList.size());
 	}
 }
