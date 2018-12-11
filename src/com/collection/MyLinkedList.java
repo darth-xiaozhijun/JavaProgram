@@ -7,10 +7,10 @@ package com.collection;
  */
 public class MyLinkedList {
 
-	Node first;
-	Node last;
+	private Node first;
+	private Node last;
 	
-	int size;
+	private int size;
 	
 	public void add(Object object){
 		
@@ -31,6 +31,8 @@ public class MyLinkedList {
 			last.next = node;
 			last = node;
 		}
+		
+		size++;
 	}
 	
 	@Override
@@ -50,13 +52,83 @@ public class MyLinkedList {
 		return stringBuilder.toString();
 	}
 	
+	public Object get(int index){
+		
+		if(index<0 || index>size-1){
+			throw new RuntimeException("索引越界："+index);
+		}
+		
+		Node temp = getNode(index);
+		
+		return temp==null?temp.element:null;
+
+	}
+	
+	public Node getNode(int index){
+		
+		Node temp = null;
+		
+		if(index<=(size>>1)){ //size>>1相当于除以2
+			
+			temp = first;
+			for (int i = 0; i < index; i++) {
+				temp = temp.next;
+			}
+			
+		}else{
+			temp = last;
+			for (int i = size-1; i > index; i--) {
+				temp = temp.previous;
+			}
+		}
+		
+		return temp;
+	}
+	
+	public void remove(int index){
+		
+		Node temp = getNode(index);
+		Node up = temp.previous;
+		Node down = temp.next;
+		
+		if(up !=null){
+			up.next = down;
+		}
+		if(down != null){
+			down.previous = up;
+		}
+		if(index == 0){
+			first = down;
+		}
+		if(index == size-1){
+			last = up;
+		}
+		
+		size--;
+	}
+	
 	public static void main(String[] args) {
 		
 		MyLinkedList linkedList = new MyLinkedList();
 		linkedList.add("a");
 		linkedList.add("b");
 		linkedList.add("c");
+		linkedList.add("d");
+		linkedList.add("e");
+		linkedList.add("f");
 		
 		System.out.println(linkedList.toString());
+//		System.out.println(linkedList.get(0));
+//		System.out.println(linkedList.get(2));
+//		System.out.println(linkedList.get(6));
+//		System.out.println(linkedList.get(5));
+		
+		linkedList.remove(1);
+		System.out.println(linkedList);
+		linkedList.remove(0);
+		System.out.println(linkedList);
+		linkedList.remove(3);
+		System.out.println(linkedList);
+		System.out.println(linkedList.size);
 	}
 }
