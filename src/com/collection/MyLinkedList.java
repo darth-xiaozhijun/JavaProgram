@@ -5,16 +5,16 @@ package com.collection;
  * @author Administrator
  *
  */
-public class MyLinkedList {
+public class MyLinkedList<E> {
 
 	private Node first;
 	private Node last;
 	
 	private int size;
 	
-	public void add(Object object){
+	public void add(E e){
 		
-		Node node = new Node(object);
+		Node node = new Node(e);
 		
 		if(first == null){
 			
@@ -52,19 +52,25 @@ public class MyLinkedList {
 		return stringBuilder.toString();
 	}
 	
-	public Object get(int index){
+	public E get(int index){
 		
-		if(index<0 || index>size-1){
-			throw new RuntimeException("索引越界："+index);
-		}
+		checkRange(index);
 		
 		Node temp = getNode(index);
 		
-		return temp!=null?temp.element:null;
+		return temp!=null?(E)temp.element:null;
 
 	}
 	
-	public Node getNode(int index){
+	private void checkRange(int index){
+		if(index<0 || index>size-1){
+			throw new RuntimeException("索引越界："+index);
+		}
+	}
+	
+	private Node getNode(int index){
+		
+		checkRange(index);
 		
 		Node temp = null;
 		
@@ -86,6 +92,8 @@ public class MyLinkedList {
 	}
 	
 	public void remove(int index){
+		
+		checkRange(index);
 		
 		Node temp = getNode(index);
 		if(temp != null){
@@ -110,9 +118,11 @@ public class MyLinkedList {
 		}
 	}
 	
-	public void add(int index,Object object){
+	public void add(int index,E e){
 		
-		Node newNode = new Node(object);
+		checkRange(index);
+		
+		Node newNode = new Node(e);
 		Node temp = getNode(index);
 		
 		if(temp != null){
@@ -153,7 +163,7 @@ public class MyLinkedList {
 	
 	public static void main(String[] args) {
 		
-		MyLinkedList linkedList = new MyLinkedList();
+		MyLinkedList<String> linkedList = new MyLinkedList<>();
 		linkedList.add("a");
 		linkedList.add("b");
 		linkedList.add("c");
