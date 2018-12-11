@@ -60,7 +60,7 @@ public class MyLinkedList {
 		
 		Node temp = getNode(index);
 		
-		return temp==null?temp.element:null;
+		return temp!=null?temp.element:null;
 
 	}
 	
@@ -88,23 +88,67 @@ public class MyLinkedList {
 	public void remove(int index){
 		
 		Node temp = getNode(index);
-		Node up = temp.previous;
-		Node down = temp.next;
+		if(temp != null){
+			
+			Node up = temp.previous;
+			Node down = temp.next;
+			
+			if(up !=null){
+				up.next = down;
+			}
+			if(down != null){
+				down.previous = up;
+			}
+			if(index == 0){
+				first = down;
+			}
+			if(index == size-1){
+				last = up;
+			}
+			
+			size--;
+		}
+	}
+	
+	public void add(int index,Object object){
 		
-		if(up !=null){
-			up.next = down;
-		}
-		if(down != null){
-			down.previous = up;
-		}
-		if(index == 0){
-			first = down;
-		}
-		if(index == size-1){
-			last = up;
-		}
+		Node newNode = new Node(object);
+		Node temp = getNode(index);
 		
-		size--;
+		if(temp != null){
+			
+			if(index == 0){
+				
+				newNode.previous = null;
+				
+				newNode.next = temp;
+				temp.previous = newNode;
+				
+				first = newNode;
+			
+			}else if(index == size-1){
+				
+				newNode.next = null;
+				
+				temp.next = newNode;
+				newNode.previous = temp;
+				
+				last = newNode;
+			
+			}else{
+				
+				Node up = temp.previous;
+				
+				up.next = newNode;
+				newNode.previous = up;
+				
+				newNode.next = temp;
+				temp.previous = newNode;
+				
+			}
+			
+			size++;
+		}
 	}
 	
 	public static void main(String[] args) {
@@ -128,6 +172,15 @@ public class MyLinkedList {
 		linkedList.remove(0);
 		System.out.println(linkedList);
 		linkedList.remove(3);
+		System.out.println(linkedList);
+		System.out.println(linkedList.size);
+		linkedList.add(1, "li");
+		System.out.println(linkedList);
+		System.out.println(linkedList.size);
+		linkedList.add(0, "le");
+		System.out.println(linkedList);
+		System.out.println(linkedList.size);
+		linkedList.add(4, "lo");
 		System.out.println(linkedList);
 		System.out.println(linkedList.size);
 	}
