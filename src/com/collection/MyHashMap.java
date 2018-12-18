@@ -70,6 +70,27 @@ public class MyHashMap {
 		}
 	}
 	
+	@Override
+	public String toString() {
+		
+		StringBuilder stringBuilder = new StringBuilder("{");
+		
+		//循环数组
+		for(int i=0; i<table.length; i++){
+			
+			//循环链表
+			HashMapNode hashMapNode = table[i];
+			while (hashMapNode != null) {
+				
+				stringBuilder.append(hashMapNode.key+":"+hashMapNode.value+",");
+				hashMapNode = hashMapNode.next;
+			}
+		}
+		
+		stringBuilder.setCharAt(stringBuilder.length()-1, '}');
+		return stringBuilder.toString();
+	}
+	
 	public static void main(String[] args) {
 		
 		MyHashMap myHashMap = new MyHashMap();
