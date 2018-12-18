@@ -91,6 +91,26 @@ public class MyHashMap {
 		return stringBuilder.toString();
 	}
 	
+	public Object get(Object key){
+		
+		Object value = null;
+		Integer hash = getHash(key.hashCode(), table.length);
+		
+		HashMapNode hashMapNode = table[hash];
+		
+		while(hashMapNode != null){
+			
+			if(key.equals(hashMapNode.key)){
+				value = hashMapNode.value;
+				break;
+			}else{
+				hashMapNode = hashMapNode.next;
+			}
+		}
+		
+		return value;
+	}
+	
 	public static void main(String[] args) {
 		
 		MyHashMap myHashMap = new MyHashMap();
@@ -104,6 +124,7 @@ public class MyHashMap {
 		myHashMap.put(85, "kk");
 		
 		System.out.println(myHashMap);
+		System.out.println(myHashMap.get(69));
 	}
 	
 }
