@@ -5,7 +5,7 @@ package com.collection;
  * @author Administrator
  *
  */
-public class MyHashMap {
+public class MyHashMap<K,V> {
 
 	HashMapNode[] table;//位桶
 	
@@ -29,7 +29,7 @@ public class MyHashMap {
 		return v&(length-1);
 	}
 	
-	public void put(Object key,Object value){
+	public void put(K key,V value){
 		
 		HashMapNode hashMapNode = new HashMapNode();
 		hashMapNode.hash = getHash(key.hashCode(), table.length);
@@ -43,6 +43,7 @@ public class MyHashMap {
 		if(mapNode == null){
 			
 			table[hashMapNode.hash] = hashMapNode;
+			size++;
 			
 		}else{
 			
@@ -65,6 +66,7 @@ public class MyHashMap {
 			//没有发生key重复的情况，则添加到链表最后
 			if(!isNodeRepeat){
 				lastNode.next = hashMapNode;
+				size++;
 			}
 			
 		}
@@ -91,9 +93,9 @@ public class MyHashMap {
 		return stringBuilder.toString();
 	}
 	
-	public Object get(Object key){
+	public V get(K key){
 		
-		Object value = null;
+		V value = null;
 		Integer hash = getHash(key.hashCode(), table.length);
 		
 		HashMapNode hashMapNode = table[hash];
@@ -101,7 +103,7 @@ public class MyHashMap {
 		while(hashMapNode != null){
 			
 			if(key.equals(hashMapNode.key)){
-				value = hashMapNode.value;
+				value = (V) hashMapNode.value;
 				break;
 			}else{
 				hashMapNode = hashMapNode.next;
@@ -113,7 +115,7 @@ public class MyHashMap {
 	
 	public static void main(String[] args) {
 		
-		MyHashMap myHashMap = new MyHashMap();
+		MyHashMap<Integer,String> myHashMap = new MyHashMap<>();
 		myHashMap.put(10, "aa");
 		myHashMap.put(20, "bb");
 		myHashMap.put(30, "cc");
@@ -125,6 +127,7 @@ public class MyHashMap {
 		
 		System.out.println(myHashMap);
 		System.out.println(myHashMap.get(69));
+		System.out.println(myHashMap.size);
 	}
 	
 }

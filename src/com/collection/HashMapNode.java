@@ -5,13 +5,13 @@ package com.collection;
  * @author Administrator
  *
  */
-public class HashMapNode {
+public class HashMapNode<K,V> {
 	
 	int hash;
 	
-	Object key;
+	K key;
 	
-	Object value;
+	V value;
 	
 	HashMapNode next;
 
