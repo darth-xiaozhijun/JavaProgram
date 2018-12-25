@@ -14,5 +14,7 @@ public class DirDemo3 {
 		 
 		 System.out.println(n);
 		 getTen(n+1);
+		 
+		 
 	}
 }
