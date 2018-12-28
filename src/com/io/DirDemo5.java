@@ -13,7 +13,7 @@ public class DirDemo5 {
 		System.out.println(allLenth);
 	}
 	
-	public static Long getAllLength(File file){
+	public static void getAllLength(File file){
 		
 		if(file != null && file.exists()){
 			
@@ -27,7 +27,5 @@ public class DirDemo5 {
 				}
 			}
 		}
-		
-		return allLenth;
 	}
 }
