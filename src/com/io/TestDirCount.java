@@ -2,7 +2,7 @@ package com.io;
 
 import java.io.File;
 
-public class DirCount {
+public class TestDirCount {
 
 	private long len;
 	
@@ -14,7 +14,7 @@ public class DirCount {
 	
 	private int fileSize;
 	
-	public DirCount(String path) {
+	public TestDirCount(String path) {
 		
 		this.path = path;
 		file = new File(path);
@@ -54,7 +54,7 @@ public class DirCount {
 
 	public static void main(String[] args) {
 		
-		DirCount dirCount = new DirCount("D:/workspace/xiaozhijun/JavaProgram");
+		TestDirCount dirCount = new TestDirCount("D:/workspace/xiaozhijun/JavaProgram");
 		System.out.println(dirCount.getLen());
 		System.out.println(dirCount.getDirSize());
 		System.out.println(dirCount.getFileSize());

@@ -2,7 +2,7 @@ package com.io;
 
 import java.io.File;
 
-public class DirDemo {
+public class TestCreateDir {
 	
 	public static void main(String[] args) {
 		

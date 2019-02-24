@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * 文件读取的标准操作步骤：
+ * 四个步骤：分段读取 字节输入流
  * 1、创建源
  * 2、选择流
  * 3、操作
@@ -15,7 +15,7 @@ import java.io.InputStream;
  * @author Administrator
  *
  */
-public class IOTest2 {
+public class TestIOInputStream {
 
 	public static void main(String[] args) {
 		
@@ -28,13 +28,14 @@ public class IOTest2 {
 		try {
 			inputStream = new FileInputStream(file);
 			
-			//3、操作（读取）
-			int temp;
-			
+			//3、操作（分段读取）
+			byte[] flush = new byte[1024*10];//缓冲容器
+			int len = -1;//接收长度
 			try {
-				while((-1) != (temp = inputStream.read())){
+				while((-1) != (len = inputStream.read(flush))){
 					
-					System.out.println((char)temp);
+					String str = new String(flush, 0, len);
+					System.out.println(str);
 				}
 				
 			} catch (IOException e) {

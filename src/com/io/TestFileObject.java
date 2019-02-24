@@ -2,7 +2,7 @@ package com.io;
 
 import java.io.File;
 
-public class FileDemo {
+public class TestFileObject {
 
 	public static void main(String[] args) {
 		

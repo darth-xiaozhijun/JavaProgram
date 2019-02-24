@@ -14,7 +14,7 @@ import java.io.OutputStream;
  * 4、释放资源
  * @author Administrator
  */
-public class IOTest4 {
+public class TestIOOutputStream {
 
 	public static void main(String[] args) {
 		

@@ -2,7 +2,7 @@ package com.io;
 
 import java.io.File;
 
-public class DirDemo5 {
+public class TestDirLength {
 	
 	private static Long allLenth = 0L;
 

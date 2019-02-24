@@ -2,7 +2,7 @@ package com.io;
 
 import java.io.File;
 
-public class PathDemo {
+public class TestFilePath2 {
 
 	public static void main(String[] args) {
 		

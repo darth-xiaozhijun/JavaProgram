@@ -16,7 +16,7 @@ import java.io.Writer;
  * 4、释放资源
  * @author Administrator
  */
-public class IOTest6 {
+public class TestIOWriter {
 
 	public static void main(String[] args) {
 		

@@ -13,7 +13,7 @@ import java.io.InputStream;
  * @author Administrator
  *
  */
-public class IOTest01 {
+public class TestIO {
 
 	public static void main(String[] args) {
 		

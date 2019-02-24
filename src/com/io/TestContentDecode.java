@@ -7,7 +7,7 @@ import java.io.UnsupportedEncodingException;
  * @author Administrator
  *
  */
-public class ContentDecode {
+public class TestContentDecode {
 	
 	public static void main(String[] args) throws UnsupportedEncodingException {
 		

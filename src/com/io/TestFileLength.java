@@ -2,7 +2,7 @@ package com.io;
 
 import java.io.File;
 
-public class FileDemo5 {
+public class TestFileLength {
 	
 	public static void main(String[] args) {
 		

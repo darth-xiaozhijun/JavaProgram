@@ -2,7 +2,7 @@ package com.io;
 
 import java.io.File;
 
-public class FileDemo4 {
+public class TestFileFunction2 {
 
 	public static void main(String[] args) {
 		

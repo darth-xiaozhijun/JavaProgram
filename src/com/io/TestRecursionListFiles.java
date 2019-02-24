@@ -2,7 +2,7 @@ package com.io;
 
 import java.io.File;
 
-public class DirDemo4 {
+public class TestRecursionListFiles {
 
 	public static void main(String[] args) {
 		

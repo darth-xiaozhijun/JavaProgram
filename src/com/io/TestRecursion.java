@@ -1,6 +1,6 @@
 package com.io;
 
-public class DirDemo3 {
+public class TestRecursion {
 
 	public static void main(String[] args) {
 		

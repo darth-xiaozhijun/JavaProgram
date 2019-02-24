@@ -3,13 +3,11 @@ package com.io;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.Reader;
 
 /**
- * 四个步骤：分段读取 字符输入流
+ * 文件读取的标准操作步骤：
  * 1、创建源
  * 2、选择流
  * 3、操作
@@ -17,27 +15,26 @@ import java.io.Reader;
  * @author Administrator
  *
  */
-public class IOTest5 {
+public class TestIO2 {
 
 	public static void main(String[] args) {
 		
 		//1、创建源
-		File file = new File("src/com/io/abc.txt");
+		File file = new File("src/com/io/test.txt");
 		
-		Reader reader = null;
+		InputStream inputStream = null;
 			
 		//2、选择流
 		try {
-			reader = new FileReader(file);
+			inputStream = new FileInputStream(file);
 			
-			//3、操作（分段读取）
-			char[] flush = new char[1024];//缓冲容器
-			int len = -1;//接收长度
+			//3、操作（读取）
+			int temp;
+			
 			try {
-				while((-1) != (len = reader.read(flush))){
+				while((-1) != (temp = inputStream.read())){
 					
-					String str = new String(flush, 0, len);
-					System.out.println(str);
+					System.out.println((char)temp);
 				}
 				
 			} catch (IOException e) {
@@ -48,9 +45,9 @@ public class IOTest5 {
 			e.printStackTrace();
 			
 		}finally {
-			 if (null != reader) {
+			 if (null != inputStream) {
 				try {
-					reader.close();
+					inputStream.close();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}

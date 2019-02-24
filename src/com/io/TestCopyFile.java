@@ -13,7 +13,7 @@ import java.io.OutputStream;
  * @author Administrator
  *
  */
-public class CopyFile {
+public class TestCopyFile {
 	
 	public static void main(String[] args) {
 		
