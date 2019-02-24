@@ -14,7 +14,7 @@ import java.io.OutputStream;
  * 4、释放资源
  * @author Administrator
  */
-public class TestIOOutputStream {
+public class TestIOFileOutputStream {
 
 	public static void main(String[] args) {
 		

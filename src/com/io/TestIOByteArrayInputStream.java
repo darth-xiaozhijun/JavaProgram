@@ -1,5 +1,6 @@
 package com.io;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -7,29 +8,29 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * 四个步骤：分段读取 字节输入流
- * 1、创建源
+ * 四个步骤：字节数组输入流
+ * 1、创建源：字节数组，不要太大
  * 2、选择流
  * 3、操作
- * 4、释放资源
+ * 4、释放资源：可以不用处理
  * @author Administrator
  *
  */
-public class TestIOInputStream {
+public class TestIOByteArrayInputStream {
 
 	public static void main(String[] args) {
 		
 		//1、创建源
-		File file = new File("src/com/io/test.txt");
+		byte[] src = "talk is cheap,show me the code".getBytes();
 		
 		InputStream inputStream = null;
 			
 		//2、选择流
 		try {
-			inputStream = new FileInputStream(file);
+			inputStream = new ByteArrayInputStream(src);
 			
 			//3、操作（分段读取）
-			byte[] flush = new byte[1024*10];//缓冲容器
+			byte[] flush = new byte[5];//缓冲容器
 			int len = -1;//接收长度
 			try {
 				while((-1) != (len = inputStream.read(flush))){
@@ -42,10 +43,7 @@ public class TestIOInputStream {
 				e.printStackTrace();
 			}
 			
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			
-		}finally {
+		} finally {
 			 if (null != inputStream) {
 				try {
 					inputStream.close();
