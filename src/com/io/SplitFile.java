@@ -70,7 +70,7 @@ public class SplitFile {
 			if(i==size-1) { //最后一块
 				actualSize = (int)len;
 			}else {
-				actualSize = blockSize;
+	 			actualSize = blockSize;
 				len -=actualSize; //剩余量
 			}
 			splitDetail(i,beginPos,actualSize);
