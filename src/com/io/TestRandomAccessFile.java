@@ -12,7 +12,7 @@ public class TestRandomAccessFile {
 
 	public static void main(String[] args) throws IOException {
 		//分多少块
-		File src = new File("src/com/sxt/io/Copy.java");
+		File src = new File("src/com/io/TestCopyFile.java");
 		//总长度
 		long len = src.length();
 		//每块大小
