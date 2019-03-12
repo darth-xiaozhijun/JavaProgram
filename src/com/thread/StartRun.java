@@ -4,6 +4,9 @@ package com.thread;
  * 创建线程方式之二：
  * 1、创建：实现Runnable+重写run方法
  * 2、启动:创建实现类对象+Thread对象+start
+ * 
+ * 推荐：避免单继承的局限性，优先使用接口
+ * 方便共享资源
  * @author Administrator
  *
  */
