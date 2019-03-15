@@ -1,7 +1,7 @@
 package com.thread;
 
 /**
- * Lambda表达式学习1
+ * Lambda表达式
  * @author Administrator
  *
  */
@@ -24,7 +24,7 @@ public class LambdaTest1 {
 		new Like2().lambda();
 		
 		//局部内部类
-		class Test3 implements ILike{
+		class Like3 implements ILike{
 
 			@Override
 			public void lambda() {
@@ -32,7 +32,7 @@ public class LambdaTest1 {
 			}
 		}
 		
-		new Test3().lambda();
+		new Like3().lambda();
 		
 		//匿名内部类
 		new ILike() {
