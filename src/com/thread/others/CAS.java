@@ -5,7 +5,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * CAS:比较并交换
  * 
- *
  */
 public class CAS {
 	//库存
