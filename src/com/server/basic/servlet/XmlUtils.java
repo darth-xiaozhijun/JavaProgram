@@ -17,7 +17,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class XmlUtils {
 
-	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
+	public static void main(String[] args) throws Exception {
 		
 		//SAX解析
 		//1、获取解析工厂
@@ -42,6 +42,12 @@ public class XmlUtils {
 		for (Mapping mapping : mappings) {
 			System.out.println(mapping);
 		}
+		
+		WebContext webContext = new WebContext(entities, mappings);
+		String className = webContext.getClz("/g");
+		Class<?> clz =  Class.forName(className);
+		Servlet servlet =  (Servlet) clz.newInstance();
+		servlet.Service();
 	}
 }
 
