@@ -51,6 +51,9 @@ class PersonHandler extends DefaultHandler{
 		}else {
 			System.out.println("内容为->"+"空");		
 		}
+		
+//		String contents = new String(ch, start, length);
+//		System.out.println(contents);
 	}
 	
 	@Override
