@@ -1,41 +1,40 @@
 package com.server;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class Server2 {
-	
-	private ServerSocket serverSocket;
-
+/**
+ * 目标: 封装请求信息
+ * 
+ */
+public class Server3 {
+	private ServerSocket serverSocket ;
 	public static void main(String[] args) {
-		Server2 server = new Server2();
+		Server3 server = new Server3();
 		server.start();
-		server.recevie();
 	}
-	
-	public void start(){
+	//启动服务
+	public void start() {
 		try {
-			serverSocket = new ServerSocket(8888);
+			serverSocket =  new ServerSocket(8888);
+			 receive();
 		} catch (IOException e) {
 			e.printStackTrace();
-			System.out.println("服务启动失败...");
+			System.out.println("服务器启动失败....");
 		}
 	}
-	
-	public void recevie(){
+	//接受连接处理
+	public void receive() {
 		try {
-			Socket socket = serverSocket.accept();
-			System.out.println("一个客户端建立了链接...");
-			byte[] bs = new byte[1024*1024];
-			InputStream inputStream = socket.getInputStream();
-			int len = inputStream.read(bs);
-			String context = new String(bs, 0, len);
-			System.out.println(context);
+			Socket client = serverSocket.accept();
+			System.out.println("一个客户端建立了连接....");
+			//获取请求协议
+			Request request =new Request(client);
 			
-			Response response = new Response(socket);
-			response.print("<html>");
+			Response response =new Response(client);
+			//关注了内容
+			response.print("<html>"); 
 			response.print("<head>");
 			response.print("<meta http-equiv=\"content-type\" content=\"txt/html; charset=utf-8\" />");
 			response.print("<title>");
@@ -46,15 +45,15 @@ public class Server2 {
 			response.print("server终于回来了。。。。");
 			response.print("</body>");
 			response.print("</html>");
-			
+			//关注了状态码
 			response.pushToBrowser(200);
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("客户端错误");
 		}
 	}
-	
-	public void stop(){
+	//停止服务
+	public void stop() {
 		
 	}
 }
