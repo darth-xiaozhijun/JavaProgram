@@ -47,7 +47,7 @@ public class XmlUtils {
 		String className = webContext.getClz("/g");
 		Class<?> clz =  Class.forName(className);
 		Servlet servlet =  (Servlet) clz.newInstance();
-		servlet.Service();
+		servlet.Service(null, null);
 	}
 }
 

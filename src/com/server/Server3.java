@@ -30,7 +30,7 @@ public class Server3 {
 			Socket client = serverSocket.accept();
 			System.out.println("一个客户端建立了连接....");
 			//获取请求协议
-			Request request =new Request(client);
+			Request2 request =new Request2(client);
 			
 			Response response =new Response(client);
 			//关注了内容

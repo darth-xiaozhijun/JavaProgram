@@ -4,15 +4,19 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import com.server.basic.servlet.LoginServlet;
+import com.server.basic.servlet.RegisterServlet;
+import com.server.basic.servlet.Servlet;
+
 /**
  * 目标: 封装请求信息中参数转成map
  * 
  *
  */
-public class Server4 {
+public class Server5 {
 	private ServerSocket serverSocket ;
 	public static void main(String[] args) {
-		Server4 server = new Server4();
+		Server5 server = new Server5();
 		server.start();
 	}
 	//启动服务
@@ -34,18 +38,22 @@ public class Server4 {
 			Request request =new Request(client);
 			
 			Response response =new Response(client);
-			//关注了内容
-			response.print("<html>"); 
-			response.print("<head>"); 
-			response.print("<meta http-equiv=\"content-type\" content=\"txt/html; charset=utf-8\" />");
-			response.print("<title>");
-			response.print("服务器响应成功");
-			response.print("</title>");
-			response.print("</head>");
-			response.print("<body>");
-			response.print("server终于回来了。。。。"+request.getParameter("uname"));
-			response.print("</body>");
-			response.print("</html>");
+			
+			Servlet servlet = null;
+			
+			if(request.getUrl().equals("login")){
+				
+				servlet = new LoginServlet();
+				servlet.Service(request, response);
+				
+			}else if(request.getUrl().equals("reg")){
+				
+				servlet = new RegisterServlet();
+				servlet.Service(request, response);
+				
+			}else {
+				
+			}
 			//关注了状态码
 			response.pushToBrowser(200);
 		} catch (IOException e) {
