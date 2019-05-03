@@ -3,7 +3,7 @@ package com.annotation;
 import java.util.Date;
 
 @SuppressWarnings("all")
-public class TestOverride {
+public class Demo01 {
 
 	@Override
 	public String toString() {
