@@ -1,4 +1,4 @@
-package com.reflection.bean;
+package com.reflection;
 
 /**
  * 测试各种类型(class,interface,enum,annotation,primitive type,void)对应的java.lang.Class对象的获取方式
@@ -9,7 +9,7 @@ public class Demo01 {
 
 	public static void main(String[] args) {
 		
-		String path = "com.bjsxt.test.bean.User";
+		String path = "com.reflection.bean.User";
 		
 		try {
 			
