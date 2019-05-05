@@ -9,7 +9,7 @@ public class Demo03 {
 		
 		try {
 			
-			Class clazz = Class.forName("com.annotation.Student");
+			Class<?> clazz = Class.forName("com.annotation.Student");
 			Annotation[] annotations = clazz.getAnnotations();
 			
 			for (Annotation annotation : annotations) {
