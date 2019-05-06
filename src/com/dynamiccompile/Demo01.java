@@ -39,7 +39,7 @@ public class Demo01 {
 		
 		
 		 try {
-             URL[] urls = new URL[] {new URL("file:/"+"D:/workspace/xiaozhijun/JavaProgram/src/com/dynamiccompile/compile")};
+             URL[] urls = new URL[] {new URL("file:///"+"D:/workspace/xiaozhijun/JavaProgram/src/com/dynamiccompile/compile")};
              URLClassLoader loader = new URLClassLoader(urls);
              Class c = loader.loadClass("HelloWorld");
              //调用加载类的main方法
