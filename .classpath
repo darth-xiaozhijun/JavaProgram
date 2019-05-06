@@ -10,5 +10,6 @@
 	<classpathentry kind="lib" path="lib/quartz-jobs-2.2.3.jar"/>
 	<classpathentry kind="lib" path="lib/quartz-2.2.3.jar"/>
 	<classpathentry kind="lib" path="lib/commons-io-2.6-sources.jar"/>
+	<classpathentry kind="lib" path="lib/javassist.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
