@@ -1,5 +1,6 @@
 package com.javassist;
 
+@Author(name = "xiao", year = 2018)
 public class Emp {
 	
 	private int empno;
