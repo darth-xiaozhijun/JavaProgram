@@ -13,7 +13,7 @@ public class Demo01 {
 		////主动引用
 //		new A();
 //		System.out.println(A.width);
-//		Class.forName("com.bjsxt.test.A");
+//		Class.forName("com.jvm.A");
 		
 		
 		//被动引用
