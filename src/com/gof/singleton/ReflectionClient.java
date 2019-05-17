@@ -37,6 +37,7 @@ public class ReflectionClient {
 			System.out.println(reflectionLazySingleton3);
 			System.out.println(reflectionLazySingleton4);*/
 			
+			//通过反序列化的方式构造多个对象
 			FileOutputStream fos = new FileOutputStream(new File("c:/A/a.txt"));
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			oos.writeObject(reflectionLazySingleton);

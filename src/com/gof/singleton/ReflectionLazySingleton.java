@@ -1,5 +1,6 @@
 package com.gof.singleton;
 
+import java.io.ObjectStreamException;
 import java.io.Serializable;
 
 /**
@@ -31,6 +32,12 @@ public class ReflectionLazySingleton implements Serializable{
 			singleton = new ReflectionLazySingleton();
 		}
 		
+		return singleton;
+	}
+	
+	//反序列化时，如果定义了readResolve()则直接返回此方法指定的对象。而不需要单独再创建新对象！
+	private Object readResolve() throws ObjectStreamException{
+
 		return singleton;
 	}
 }
