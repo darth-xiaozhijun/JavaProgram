@@ -13,6 +13,7 @@ public class Client {
 		
 		Date date = new Date(1234721384728L);
 		Sheep sheep = new Sheep("多利", date);
+		Sheep sheep2 = (Sheep) sheep.clone();
 		System.out.println(sheep);
 		System.out.println(sheep.getName());
 		System.out.println(sheep.getBirthday());
@@ -21,7 +22,6 @@ public class Client {
 		
 		System.out.println(sheep.getBirthday());
 		
-		Sheep sheep2 = (Sheep) sheep.clone();
 		sheep2.setName("多利克隆");
 		System.out.println(sheep2);
 		System.out.println(sheep2.getName());
