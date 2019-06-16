@@ -1,4 +1,4 @@
-package com.strategy;
+package com.gof.strategy;
 
 /**
  * 负责和具体的策略类交互

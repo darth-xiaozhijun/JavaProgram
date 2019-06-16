@@ -1,4 +1,4 @@
-package com.strategy;
+package com.gof.strategy;
 
 public class Client {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.strategy;
+package com.gof.strategy;
 
 /**
  * 实现起来比较容易，符合一般开发人员的思路
