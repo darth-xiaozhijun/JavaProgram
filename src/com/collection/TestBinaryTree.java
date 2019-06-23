@@ -49,6 +49,19 @@ public class TestBinaryTree {
         tree.midprint(newtree);
         System.out.println();
         tree.lastprint(newtree);
+    	
+    	int i = 1;
+    	int j = i++;
+    	if((i==(++j)) &&((i++) == j) ){
+    		i += j;
+    	}
+    	System.out.println(i);
+    	
+    	System.out.println(""+10+20.2*10L);
+    	System.out.println((char)68);
+    	
+    	System.out.println(Math.round(-15.61));
     }
+    
 
 }
