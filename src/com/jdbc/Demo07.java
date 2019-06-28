@@ -15,7 +15,7 @@ import java.util.Random;
  * 测试时间处理(java.sql.Date,Time,Timestamp)
  *
  */
-public class Demo7 {
+public class Demo07 {
 	public static void main(String[] args) {
 		Connection conn = null;
 		PreparedStatement ps1 = null;
