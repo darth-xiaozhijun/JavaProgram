@@ -1,5 +1,10 @@
 package com.oop;
 
+/**
+ * 接口的多实现
+ * @author Administrator
+ *
+ */
 public class TestInterface {
 
 	public static void main(String[] args) {

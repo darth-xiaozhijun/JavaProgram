@@ -31,6 +31,11 @@ interface B{
 	void testB();
 }
 
+/**
+ * 接口的多继承
+ * @author Administrator
+ *
+ */
 interface C extends A,B{
 	void testC();
 }
