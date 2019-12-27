@@ -10,6 +10,7 @@ public class WangMeiLi implements Girl{
 	@Override
 	public void date() {
 		System.out.println("约会");
+		this.watchMovie();
 	}
 
 	@Override

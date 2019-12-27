@@ -12,9 +12,9 @@ public class Test {
 		
 		mother.date();
 		
-		System.out.println();
-		
-		mother.watchMovie();
+//		System.out.println();
+//		
+//		mother.watchMovie();
 	}
 
 }
